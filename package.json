@@ -1,10 +1,10 @@
 {
-  "name": "@react/table-of-contents",
-  "version": "1.0.0",
+  "name": "react-auto-toc",
+  "version": "2.0.0",
   "description": "Automatically renders a table of contents, as well as highlights the active heading",
   "author": "architgarg",
   "license": "MIT",
-  "repository": "architgarg/@react/table-of-contents",
+  "repository": "architgarg/react-auto-toc",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

@@ -1,4 +1,4 @@
-# @react/table-of-contents
+# react-auto-toc
 
 > Automatically renders a table of contents, as well as highlights the active heading
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save @react/table-of-contents
+npm install --save react-auto-toc
 ```
 
 ## Usage
@@ -15,12 +15,12 @@ npm install --save @react/table-of-contents
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from '@react/table-of-contents'
-import '@react/table-of-contents/dist/index.css'
+import TableOfContents from 'react-auto-toc'
+import 'react-auto-toc/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <TableOfContents />
   }
 }
 ```
