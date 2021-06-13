@@ -1,9 +1,28 @@
-/* add css module styles here (optional) */
+.link {
+  color: var(--link-color, #403f45);
+}
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+.link.active {
+  color: var(--link-active-color, #403f45);
+}
+
+.ul {
+
+}
+
+.li {
+  list-style: none;
+}
+
+
+[id] {
+  scroll-margin-top: var(--scroll-margin-top, 30px);
+}
+
+/* Safari-only */
+@supports (-webkit-hyphens:none) {
+  [id] {
+    padding-top: var(--scroll-margin-top, 30px);
+    margin-top: var(--scroll-margin-top, -30px);
+  }
 }
