@@ -1,9 +1,12 @@
 .link {
   color: var(--link-color, #403f45);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .link.active {
-  color: var(--link-active-color, #403f45);
+  color: var(--link-active-color, #817bd5);
+  font-weight: bold;
 }
 
 .ul {

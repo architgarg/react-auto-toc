@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 4;
+  padding: 40px 100px;
+}
+
+.tocContainer {
+  flex: 2;
+  position: sticky;
+  position: -webkit-sticky; /* For Safari */
+  top: 24px; /* How far down the page you want your ToC to live */
+
+  /* Give table of contents a scrollbar */
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+}
+
+.toc {
+
+}

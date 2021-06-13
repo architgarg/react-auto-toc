@@ -6,43 +6,50 @@ import { Heading } from './models/heading.model'
 import classNames from 'classnames'
 
 interface TableOfContentsProps {
-  ulClassName?: string
-  liClassName?: string
-  linkClassName?: string
-  activeLinkClassName?: string
+  className?: string
+  activeClassName?: string
 }
 
-export const TableOfContents: React.FC<TableOfContentsProps> = () => {
+const TableOfContents: React.FC<TableOfContentsProps> = ({
+  className,
+  activeClassName,
+}) => {
   const activeHeadingId = useActiveHeadingObserver()
   const headings = useHeadingsExtractor()
 
-  return <Headings headings={headings} activeHeadingId={activeHeadingId} />
+  return (
+    <Headings
+      headings={headings}
+      activeHeadingId={activeHeadingId}
+      className={className}
+      activeClassName={activeClassName}
+    />
+  )
 }
 
 interface HeadingsProps extends TableOfContentsProps {
   headings: Heading[]
   activeHeadingId?: string
+  className?: string
+  activeClassName?: string
 }
 
 export const Headings: React.FC<HeadingsProps> = ({
   headings,
   activeHeadingId,
-  ulClassName,
-  liClassName,
-  linkClassName,
-  activeLinkClassName,
+  className,
+  activeClassName,
 }) => {
   return (
-    <ul className={classNames(styles.ul, ulClassName)}>
+    <ul className={classNames(styles.ul, className)}>
       {headings.map((heading) => (
-        <li key={heading.id} className={classNames(styles.li, liClassName)}>
+        <li key={heading.id} className={classNames(styles.li)}>
           <a
             href={`#${heading.id}`}
             className={classNames(
               styles.link,
-              linkClassName,
               activeHeadingId === heading.id && styles.active,
-              activeHeadingId === heading.id && activeLinkClassName,
+              activeHeadingId === heading.id && activeClassName,
             )}
             onClick={(e) => {
               e.preventDefault()
@@ -57,6 +64,7 @@ export const Headings: React.FC<HeadingsProps> = ({
             <Headings
               headings={heading.items}
               activeHeadingId={activeHeadingId}
+              activeClassName={activeClassName}
             />
           )}
         </li>
@@ -64,3 +72,5 @@ export const Headings: React.FC<HeadingsProps> = ({
     </ul>
   )
 }
+
+export default TableOfContents
