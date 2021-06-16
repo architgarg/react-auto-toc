@@ -1,6 +1,6 @@
 {
   "name": "react-auto-toc",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Automatically renders a table of contents, as well as highlights the active heading",
   "author": "architgarg",
   "license": "MIT",
