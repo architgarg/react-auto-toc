@@ -53,6 +53,12 @@ export const Headings: React.FC<HeadingsProps> = ({
             )}
             onClick={(e) => {
               e.preventDefault()
+
+              if (!heading.id) {
+                console.warn('heading id not found')
+                return
+              }
+              
               document.querySelector(`#${heading.id}`)?.scrollIntoView({
                 behavior: 'smooth',
               })
